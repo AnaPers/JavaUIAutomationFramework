@@ -15,6 +15,7 @@ public class DriverManager {
         switch(WEB_DRIVER_TYPE.toUpperCase()){
             case "CHROME":
                   driver = new ChromeDriver();
+                  driver.manage().window().maximize();
                 System.out.println("The Chrome driver is opened.");
                 break;
             case "FIREFOX":
