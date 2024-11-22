@@ -2,10 +2,7 @@ package online.tekwillacademy;
 
 import online.tekwillacademy.managers.DriverManager;
 import online.tekwillacademy.managers.RandomDataManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
 
 public class TestRunner {
     public static void main(String[] args) throws InterruptedException {
@@ -46,6 +43,8 @@ public class TestRunner {
         passwordInput.sendKeys(passwordData);
 
         WebElement privacyToggleBar = driver.findElement(By.name("agree"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
+        Thread.sleep(500);
         privacyToggleBar.click();
 
         WebElement continueButton = driver.findElement(By.cssSelector("button[type='submit']"));
