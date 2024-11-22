@@ -2,6 +2,7 @@ package online.tekwillacademy;
 
 import online.tekwillacademy.managers.DriverManager;
 import online.tekwillacademy.managers.RandomDataManager;
+import online.tekwillacademy.managers.ScrollManager;
 import org.openqa.selenium.*;
 
 public class TestRunner {
@@ -43,7 +44,8 @@ public class TestRunner {
         passwordInput.sendKeys(passwordData);
 
         WebElement privacyToggleBar = driver.findElement(By.name("agree"));
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
+        ScrollManager.scrollToElement(privacyToggleBar);
+       // ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", privacyToggleBar);
         Thread.sleep(500);
         privacyToggleBar.click();
 
