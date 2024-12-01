@@ -51,8 +51,8 @@ public class RegisterFlowWithJunit {
 
         Thread.sleep(2000);
 
-        boolean urlContainsSuccessKyeword = driver.getCurrentUrl().contains("success");
-        Assertions.assertTrue(urlContainsSuccessKyeword, "The URL of the page contains Success keyword");
+        boolean urlContainsSuccessKeyword = driver.getCurrentUrl().contains("success");
+        Assertions.assertTrue(urlContainsSuccessKeyword, "The URL of the page contains Success keyword");
 
         /*Account related actions
         AccountPage accountPage = new AccountPage(driver);
